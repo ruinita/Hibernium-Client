@@ -1,20 +1,20 @@
 {
-    "name": "Selvania-Launcher",
-    "preductname": "Selvania Launcher",
-    "version": "2.0.3",
-    "description": "Launcher Mincraft pour le serveur Selvania",
+    "name": "hibernium-client",
+    "preductname": "Hibernium Client",
+    "version": "1.0.0",
+    "description": "Cliente de minecraft echo por ruinita",
     "main": "src/app.js",
     "author": {
-        "name": "luuxis, Inc.",
-        "email": "contact@luuxis.fr",
-        "url": "https://github.com/luuxis"
+        "name": "ruinita",
+        "email": "ruinita2012@gmail.com",
+        "url": "https://github.com/ruinita"
     },
     "url": "http://launcher.luuxis.fr",
     "scripts": {
         "start": "cross-env-shell NODE_ENV=dev electron .",
         "dev": "cross-env-shell DEV_TOOL=open nodemon --exec npm start",
         "build": "node build.js --obf=true --build=platform",
-        "icon": "node build.js --icon=https://raw.githubusercontent.com/luuxis/Selvania-Launcher/master/src/assets/images/icon.png"
+        "icon": "node build.js --icon=https://cdn.discordapp.com/attachments/1230173408248070234/1230914561847197787/foto.png?ex=66350d84&is=66229884&hm=2314a57debe3e659f2b8b275d921f2c668b748729eacefeb8f70240bde7f056a&"
     },
     "license": "CCANC",
     "nodemonConfig": {
@@ -39,6 +39,6 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/luuxis/Selvania-Launcher.git"
+        "url": "git+https://github.com/ruinita/Hibernium-Client.git"
     }
 }
