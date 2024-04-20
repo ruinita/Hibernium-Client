@@ -9,7 +9,7 @@
         "email": "ruinita2012@gmail.com",
         "url": "https://github.com/ruinita"
     },
-    "url": "http://launcher.luuxis.fr",
+    "url": "https://hiberniumstudio.000webhostapp.com/main",
     "scripts": {
         "start": "cross-env-shell NODE_ENV=dev electron .",
         "dev": "cross-env-shell DEV_TOOL=open nodemon --exec npm start",
