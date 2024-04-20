@@ -54,7 +54,7 @@ class Settings {
                 if (e.target.classList.contains('account')) {
                     popupAccount.openPopup({
                         title: 'Conexión',
-                        content: 'Espere por favor...',
+                        content: 'Espere por favor',
                         color: 'var(--color)'
                     })
 
@@ -187,7 +187,7 @@ class Settings {
                 javaPathInputTxt.value = file;
                 configClient.java_config.java_path = file
                 await this.db.updateData('configClient', configClient);
-            } else alert("El nombre del archivo debe ser java o javaw.");
+            } else alert("El nombre del archivo debe ser java o javaww");
         });
 
         document.querySelector(".java-path-reset").addEventListener("click", async () => {
