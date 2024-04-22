@@ -1,11 +1,11 @@
 {
     "name": "hibernium-client",
     "preductname": "Hibernium Client",
-    "version": "1.1.0",
+    "version": "1.2.0",
     "description": "Cliente de minecraft echo por ruinita",
     "main": "src/app.js",
     "author": {
-        "name": "ruinita.",
+        "name": "ruinita",
         "email": "ruinita2012@gmail.com",
         "url": "https://github.com/ruinita"
     },

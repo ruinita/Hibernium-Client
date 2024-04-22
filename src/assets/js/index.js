@@ -30,9 +30,9 @@ class Splash {
 
     async startAnimation() {
         let splashes = [
-            { "message": "Hibernium Client", "author": "ruinita" },
-            { "message": "Hibernium Client", "author": "ruinita" },
-            { "message": "Hibernium Client", "author": "ruinita" }
+            { "message": "Bienvenido/a", "author": "ruinita" },
+            { "message": "Bienvenido/a", "author": "ruinita" },
+            { "message": "Bienvenido/a", "author": "ruinita" }
         ];
         let splash = splashes[Math.floor(Math.random() * splashes.length)];
         this.splashMessage.textContent = splash.message;
