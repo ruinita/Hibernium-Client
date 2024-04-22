@@ -1,8 +1,7 @@
 /**
  * @author ruinita
- * @license CC-BY-NC 4.0 - https://creativecommons.org/licenses/by-nc/4.0
  */
-import { config, database, logger, changePanel, appdata, setStatus, pkg, popup } from '../utils.js'
+import { config, database, logger, changePanel, appdata, setStatus, pkg } from '../utils.js'
 
 const { Launch } = require('minecraft-java-core')
 const { shell, ipcRenderer } = require('electron')
@@ -15,6 +14,11 @@ class Home {
         this.news()
         this.socialLick()
         this.instancesSelect()
+        this.IniciarEstadoDiscord();
+    }
+
+    async IniciarEstadoDiscord() {
+        ipcRenderer.send('new-status-discord');
         document.querySelector('.settings-btn').addEventListener('click', e => changePanel('settings'))
     }
 
@@ -33,12 +37,12 @@ class Home {
                         </div>
                         <div class="date">
                             <div class="day">1</div>
-                            <div class="month">Enero</div>
+                            <div class="month">Abril</div>
                         </div>
                     </div>
                     <div class="news-content">
                         <div class="bbWrapper">
-                            <p>Puedes seguir todas las novedades relativas al servidor aquí.</p>
+                            <p>Vous pourrez suivre ici toutes les news relative au serveur.</p>
                         </div>
                     </div>`
                 newsElement.appendChild(blockNews);
@@ -83,7 +87,7 @@ class Home {
                     </div>
                     <div class="news-content">
                         <div class="bbWrapper">
-                            <p>No se puede contactar con el servidor de noticias.</br>Compruebe su configuración.</p>
+                            <p>Impossible de contacter le serveur des news.</br>Merci de vérifier votre configuration.</p>
                         </div>
                     </div>`
             newsElement.appendChild(blockNews);
@@ -137,7 +141,7 @@ class Home {
                         await this.db.updateData('configClient', configClient)
                     }
                 }
-            } else console.log(`Initializing instance ${instance.name}...`)
+            } else console.log(`Iniciando instancia ${instance.name}...`)
             if (instance.name == instanceSelect) setStatus(instance.status)
         }
 
@@ -249,6 +253,7 @@ class Home {
         infoStartingBOX.style.display = "block"
         progressBar.style.display = "";
         ipcRenderer.send('main-window-progress-load')
+        ipcRenderer.send('new-status-discord-jugando',  `Jugando a '${options.name}'`) 
 
         launch.on('extract', extract => {
             ipcRenderer.send('main-window-progress-load')
@@ -256,14 +261,14 @@ class Home {
         });
 
         launch.on('progress', (progress, size) => {
-            infoStarting.innerHTML = `Descargar ${((progress / size) * 100).toFixed(0)}%`
+            infoStarting.innerHTML = `Descargando ${((progress / size) * 100).toFixed(0)}%`
             ipcRenderer.send('main-window-progress', { progress, size })
             progressBar.value = progress;
             progressBar.max = size;
         });
 
         launch.on('check', (progress, size) => {
-            infoStarting.innerHTML = `Verificación ${((progress / size) * 100).toFixed(0)}%`
+            infoStarting.innerHTML = `Verificando Archivos ${((progress / size) * 100).toFixed(0)}%`
             ipcRenderer.send('main-window-progress', { progress, size })
             progressBar.value = progress;
             progressBar.max = size;
@@ -283,7 +288,7 @@ class Home {
         launch.on('patch', patch => {
             console.log(patch);
             ipcRenderer.send('main-window-progress-load')
-            infoStarting.innerHTML = `Parche en curso...`
+            infoStarting.innerHTML = `Extrayendo forge..`
         });
 
         launch.on('data', (e) => {
@@ -293,9 +298,10 @@ class Home {
             };
             new logger('Minecraft', '#36b030');
             ipcRenderer.send('main-window-progress-load')
-            infoStarting.innerHTML = `Empezando...`
+            infoStarting.innerHTML = `Playing`
             console.log(e);
-        })
+
+        });
 
         launch.on('close', code => {
             if (configClient.launcher_config.closeLauncher == 'close-launcher') {
@@ -303,30 +309,17 @@ class Home {
             };
             ipcRenderer.send('main-window-progress-reset')
             infoStartingBOX.style.display = "none"
-            playInstanceBTN.style.display = "flex"
-            infoStarting.innerHTML = `Verificación`
+            playInstanceBTN.style.display = "block"
+            infoStarting.innerHTML = `Volviendo al juego..`
             new logger(pkg.name, '#7289da');
             console.log('Close');
+            
+            ipcRenderer.send('delete-and-new-status-discord')
+
         });
 
         launch.on('error', err => {
-            let popupError = new popup()
-
-            popupError.openPopup({
-                title: 'Error',
-                content: err.error,
-                color: 'red',
-                options: true
-            })
-
-            if (configClient.launcher_config.closeLauncher == 'close-launcher') {
-                ipcRenderer.send("main-window-show")
-            };
             ipcRenderer.send('main-window-progress-reset')
-            infoStartingBOX.style.display = "none"
-            playInstanceBTN.style.display = "flex"
-            infoStarting.innerHTML = `Verificación`
-            new logger(pkg.name, '#7289da');
             console.log(err);
         });
     }
@@ -336,7 +329,7 @@ class Home {
         let year = date.getFullYear()
         let month = date.getMonth() + 1
         let day = date.getDate()
-        let allMonth = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre']
+        let allMonth = ['n', 'n', 'n', 'n', 'n', 'n', 'n', 'n', 'n', 'n', 'n', 'n']
         return { year: year, month: allMonth[month - 1], day: day }
     }
 }
