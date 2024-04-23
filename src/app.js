@@ -78,7 +78,7 @@ const pkg = require('../package.json');
 let startedAppTime = Date.now();
 
 ipcMain.on('new-status-discord', async (event, instancia, imginstancia) => {
-    client.login({ clientId: '1211364280444915742' });
+    client.login({ clientId: '1232323030232072202' });
     client.on('ready', () => {
         client.request('SET_ACTIVITY', {
             pid: process.pid,
@@ -86,13 +86,13 @@ ipcMain.on('new-status-discord', async (event, instancia, imginstancia) => {
                 details: 'En el menú inicial',
                 state: `Instancia seleccionada: ${instancia}`,
                 assets: {
-                    large_image: 'icon',
+                    large_image: path.resolve(__dirname, 'runita.png'),
                     large_text: `v${pkg.version}`,
                     small_image: `${imginstancia}`,
                     small_text: `${instancia}`,
                 },
                 buttons: [
-                    { label: 'Discord 🌟', url: "https://discord.gg/24QNs5UucnQ" },
+                    { label: 'Discord Oficial 🧊', url: "https://discord.gg/zNahCY7m" },
                 ],
                 instance: false,
                 timestamps: {
@@ -106,7 +106,7 @@ ipcMain.on('new-status-discord', async (event, instancia, imginstancia) => {
 ipcMain.on('new-status-discord-jugando', async (event, instancia, imginstancia, version) => {
     if(client) await client.destroy();
     client = new rpc.Client({ transport: 'ipc' });
-    client.login({ clientId: '1211364280444915742' });
+    client.login({ clientId: '1232323030232072202' });
     client.on('ready', () => {
         client.request('SET_ACTIVITY', {
             pid: process.pid,
@@ -114,13 +114,13 @@ ipcMain.on('new-status-discord-jugando', async (event, instancia, imginstancia, 
                 details: `Jugando a ${instancia}`,
                 state: `Minecraft v${version}`,
                 assets: {
-                    large_image: `${imginstancia}`,
+                    large_image: path.resolve(__dirname, 'runita.png'),
                     large_text: `${instancia}`,
                     small_image: 'icon',
                     small_text: `v${pkg.version}`
                 },
                 buttons: [
-                    { label: 'Discord 🌟', url: "https://discord.gg/24QNs5UucnQ" },
+                    { label: 'Discord Oficial 🧊', url: "https://discord.gg/zNahCY7m" },
                 ],
                 instance: false,
                 timestamps: {
@@ -134,7 +134,7 @@ ipcMain.on('new-status-discord-jugando', async (event, instancia, imginstancia, 
 ipcMain.on('delete-and-new-status-discord', async (event, instancia, imginstancia) => {
     if(client) client.destroy();
     client = new rpc.Client({ transport: 'ipc' });
-    client.login({ clientId: '1211364280444915742' });
+    client.login({ clientId: '1232323030232072202' });
     client.on('ready', () => {
         client.request('SET_ACTIVITY', {
             pid: process.pid,
@@ -142,13 +142,13 @@ ipcMain.on('delete-and-new-status-discord', async (event, instancia, imginstanci
                 details: 'En el menú inicial',
                 state: `Instancia seleccionada: ${instancia}`,
                 assets: {
-                    large_image: 'icon',
+                    large_image: path.resolve(__dirname, 'runita.png'),
                     large_text: `v${pkg.version}`,
                     small_image: `${imginstancia}`,
                     small_text: `${instancia}`,
                 },
                 buttons: [
-                    { label: 'Discord 🌟', url: "https://discord.gg/24QNs5UucnQ" },
+                    { label: 'Discord Oficial 🧊', url: "https://discord.gg/zNahCY7m" },
                 ],
                 instance: false,
                 timestamps: {
