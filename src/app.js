@@ -84,7 +84,6 @@ ipcMain.on('new-status-discord', async (event, instancia, imginstancia) => {
             pid: process.pid,
             activity: {
                 details: 'En el menú inicial',
-                state: `Instancia seleccionada: ${instancia}`,
                 assets: {
                     large_image: 'icon',
                     large_text: `v${pkg.version}`,
@@ -111,7 +110,7 @@ ipcMain.on('new-status-discord-jugando', async (event, instancia, imginstancia, 
         client.request('SET_ACTIVITY', {
             pid: process.pid,
             activity: {
-                details: `Jugando a ${instancia}`,
+                details: `${instancia}`,
                 state: `Minecraft v${version}`,
                 assets: {
                     large_image: 'icon',
