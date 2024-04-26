@@ -1,30 +1,8 @@
 .login .container {
-    position: absolute;
-    top: 48%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 28%;
-    height: 75%;
-    background: #1e1f29;
-    font: normal normal bold 13px/13px Poppins;
-    color: white;
-    border-radius: 15px;
-    text-align: center;
-    z-index: -2;
-}
-
-.background-invisible{
-    position: absolute;
-    border: none;
-    top: 0%;
-    left: 0%;
-    width: 100%;
-    height: 50%;
-    background-image: url(./images/backgroundlogin/LoginBackground.png);
-    border-radius: 15px 15px 0px 0px;
-    background-position: center;
-    background-size: cover;
-    transition: all .7s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
 }
 
 .login-tabs {
@@ -41,24 +19,17 @@
 .login-AZauth,
 .login-AZauth-A2F {
     display: none;
-    top: 271px;
-    border-radius: 3px;
-    background: #1e1f2900;
-    left: -46px;
 }
 
 .login-text {
-    font-size: 1.0rem;
-    height: 50px;
-    width: 429px;
-
+    font-size: 1.3rem;
 }
 
 .connect,
 .cancel {
     background: none;
     color: var(--color);
-    border: solid 4px #fff;
+    border: solid 4px var(--element-color);
     border-radius: 10px;
     padding: 0.3rem 4rem;
     font-size: inherit;
@@ -66,21 +37,13 @@
     margin: 15px 10px;
 }
 
-.connect:hover,
-.cancel:hover {
-    background-color: #000000;
-    box-shadow: 0 0 10px #F1F1F1;
-    transition: 500ms;
-    height: -0.5px;
-}
-
 .input-login .email,
 .input-login .password,
 .A2F {
     color: var(--color);
     background: none;
-    border: solid 4px #fff;
-    border-radius: 13px;
+    border: solid 2px var(--element-color);
+    border-radius: 30px;
     width: 50%;
     padding: 0.4rem 1rem;
     margin-top: 10px;

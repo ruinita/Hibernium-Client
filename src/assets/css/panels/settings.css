@@ -1,13 +1,12 @@
 .settings .container {
     display: flex;
     height: 100%;
-    backdrop-filter: blur(8px);
 }
 
 .nav-settings {
     width: 20%;
     height: 100%;
-    background: url('../../images/default/light.png');
+    background: var(--background);
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -28,13 +27,13 @@
 }
 
 .nav-box #save {
-    border: 4px solid #fff;
+    border: solid 4px var(--background-element);
     margin: 3rem;
 }
 
 .nav-settings-btn {
     font-size: 50%;
-    border: 4px solid #fff;
+    border: solid 4px var(--element-color);
     padding: 5px 10px;
     border-radius: 10px;
     width: 70%;
@@ -43,15 +42,8 @@
     cursor: pointer;
 }
 
-.nav-settings-btn:hover {
-    background-color: #000000;
-    box-shadow: 0 0 10px #F1F1F1;
-    transition: 500ms;
-    height: -0.5px;
-}
-
 .active-settings-BTN {
-    background: #1f1f1f;
+    background: var(--element-color);
 }
 
 .container-settings {
@@ -64,7 +56,6 @@
     height: calc(100% - 26px);
     opacity: 0;
     pointer-events: none;
-    transition: opacity 0.3s ease-in-out;
 
 }
 
@@ -119,7 +110,7 @@
  * account tab                                                                 *
  *                                                                             *
  ******************************************************************************/
- .accounts-list {
+.accounts-list {
     max-height: 90%;
     display: flex;
     flex-wrap: wrap;
@@ -129,7 +120,7 @@
 
 .account {
     background: var(--background-element);
-    border: 4px solid #fff;
+    border: solid 4px var(--background-element);
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -137,36 +128,30 @@
     height: calc(100px - 8px);
     margin: 1rem;
     border-radius: 15px;
-    transition: background-color 0.3s, border-color 0.3s, transform 0.3s;
 }
 
 .account-select {
-    border: 4px solid #fff;
-    transition: border-color 0.3s;
+    border: solid 4px var(--element-color);
 }
 
 .accounts-list #add {
-    display: none;
     justify-content: center;
     cursor: pointer;
 }
 
 .add-profile {
-    display: none;
     width: 70px;
     height: 70px;
     font-size: 3rem;
+    display: flex;
     justify-content: center;
     align-items: center;
     pointer-events: none;
-    transition: transform 0.3s;
 }
 
 .add-text-profile {
     font-size: 1.5rem;
-    display: none;
     pointer-events: none;
-    transition: opacity 0.3s;
 }
 
 .profile-image {
@@ -177,24 +162,30 @@
     border-radius: 15px;
     pointer-events: none;
     image-rendering: pixelated;
-    transition: transform 0.3s;
 }
 
 .profile-infos {
     text-align: center;
     width: 10rem;
     pointer-events: none;
-    transition: transform 0.3s;
+
 }
 
-.profile-pseudo,
-.profile-uuid {
+.profile-pseudo {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
     font-size: 1.5rem;
     pointer-events: none;
-    transition: transform 0.3s;
+
+}
+
+.profile-uuid {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    pointer-events: none;
+
 }
 
 .delete-profile {
@@ -208,13 +199,11 @@
     align-items: center;
     color: #ff2c2c;
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s;
 }
 
 .delete-profile-icon {
     pointer-events: none;
 }
-
 
 /*******************************************************************************
  *                                                                             *
@@ -419,13 +408,6 @@
     cursor: pointer;
 }
 
-.close-btn:hover {
-    background-color: #000000;
-    box-shadow: 0 0 10px #F1F1F1;
-    transition: 500ms;
-    height: -0.5px;
-}
-
 .active-close {
-    background: #1f1f1f;
+    border: 4px solid var(--element-color);
 }

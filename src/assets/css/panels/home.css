@@ -5,6 +5,12 @@
     align-items: center;
 }
 
+/*******************************************************************************
+ *                                                                             *
+ * Status server                                                               *
+ *                                                                             *
+ ******************************************************************************/
+
 .status-server {
     position: relative;
     display: flex;
@@ -31,7 +37,7 @@
 
 .server-status-text {
     font-size: 0.6rem;
-    color: #00ff00;
+    color: #1AC707;
 }
 
 .server-status-infos .red {
@@ -59,19 +65,7 @@
     right: 10px;
     border-radius: 15px;
     border: solid 5px var(--background);
-    background: #2bff00;
-}
-
-.status-player-count-yellow {
-    position: absolute;
-    content: '';
-    width: 10px;
-    height: 10px;
-    top: 10px;
-    right: 10px;
-    border-radius: 15px;
-    border: solid 5px var(--background);
-    background: #eeff00;
+    background: #1AC707;
 }
 
 .red:after {
@@ -85,7 +79,6 @@
     display: flex;
 }
 
-
 /*******************************************************************************
  *                                                                             *
  * news server                                                                 *
@@ -96,8 +89,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 18%;
-    height: 18%;
+    width: 85%;
+    height: 100%;
 }
 
 .titre-tab-new {
@@ -105,17 +98,15 @@
     font-size: 2rem;
     padding: 0.5rem 1rem;
     border-radius: 2rem;
-    background: #2c2c2c00;
+    background: var(--background-transparent);
     color: var(--color);
-    width: 1px;
-    height: 0px;
 }
 
 .news-list {
-    width: 98%;
-    height: 81%;
+    width: 90%;
+    height: 100%;
     border-radius: 10px;
-    margin: 2rem 0;
+    margin: 1rem 0;
 }
 
 .news-block {
@@ -167,34 +158,6 @@
 .news-content .bbWrapper .news-author span {
     font-weight: 700;
 }
-/*******************************************************************************
- *                                                                             *
- *    Launcher                                                                 *
- *                                                                             *
- ******************************************************************************/
-
- .launcherk {
-    position: absolute;
-    font: normal normal bold 27px/40px Poppins;
-    letter-spacing: 0px;
-    color: #eaedf0;
-    display: flex;
-    position: absolute;
-    text-decoration: none;
-    max-width: calc(100% - 158px);
-    font-weight: 600;
-    font-size: 18px;
-    top: 20px;
-    left: 555px;
-    background-color: transparent;   
-    border: none;
-    transform: translate(0, -50%);
-    overflow: hidden;
-    line-height: 25px;
-    align-items: center;
-    height: 3em;
-    text-shadow: 0 0 1px #ffffff00, 0 0 3px;
-}
 
 /*******************************************************************************
  *                                                                             *
@@ -202,14 +165,13 @@
  *                                                                             *
  ******************************************************************************/
 
- .social-tab {
+.social-tab {
     position: absolute;
     display: flex;
     bottom: 0;
-    top: 75px;
     right: 0;
     width: 15%;
-    height: calc(86% - 1rem);
+    height: calc(80% - 1rem);
     justify-content: center;
     margin-bottom: 1rem;
 }
@@ -221,13 +183,7 @@
 
 .social-block {
     display: flex;
-    border: currentColor;
-    background: #80808027;
-    font: normal normal bold 20px/25px Poppins;
-    color: #ffffffe7;
-    border: 2px solid #fff;
-    border-radius: 6px 6px 6px 6px;
-    transition: 400ms;
+    background: var(--background-transparent);
     width: 90px;
     height: 90px;
     margin-bottom: 1rem;
@@ -238,34 +194,27 @@
     justify-content: center;
 }
 
-.social-block:hover {
-    background-color: #000000;
-    box-shadow: 0 0 10px #F1F1F1;
-    transition: 700ms;
-    height: -0.5px;
-}
-
 .social-block .icon-social {
     pointer-events: none;
     background-repeat: no-repeat;
     height: 55%;
     width: 55%;
     filter: var(--svg-color);
-    
-    
 }
+
 /*******************************************************************************
  *                                                                             *
  * sidebar                                                                     *
  *                                                                             *
  ******************************************************************************/
 
- .sidebar {
+.sidebar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 50%;
+    width: 100%;
     height: 90px;
+    background: var(--background-transparent);
 }
 
 .player-options {
@@ -278,21 +227,14 @@
 }
 
 .player-head {
-    position: absolute;
-    top: -15.1%;
-    width: -38px;
-    height: -14px;
-    left: 81.7%;
-    border: currentColor;
-    transition: 0.2s;
-    color: #f1f1f100;
-    background-color: #80808000;
-    background-size: 38px;
-    background-position: center;
-    background-repeat: no-repeat;
-    border-radius: 6px 6px 6px 6px;
-    border: 2px solid #ffffff00;
-    transition: 400ms;
+    background: url('../../images/default/setve.png'), no-repeat;
+    background-size: cover;
+    image-rendering: pixelated;
+    transition: var(--transition);
+    height: 3rem;
+    width: 3rem;
+    pointer-events: none;
+    border-radius: 15px;
 }
 
 .player-menu {
@@ -302,84 +244,46 @@
 }
 
 .play-elements {
+    display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .play-instance {
+    display: flex;
     justify-content: space-between;
     align-items: center;
     position: relative;
+    border: solid 3px var(--element-color);
+    border-radius: 15px;
+    height: 3.2rem;
+    padding-right: 1.9rem;
 }
 
 .play-btn {
-    position: relative;
-    width: 250px;
-    height: 54px;
-    left: -500px;
-    border-style: solid;
-    border-width: 1px;
-    top: -5px;
-    border-color: #fff;
-    background-color: #80808027;
-    font: normal normal bold 20px/25px Trebuchet MS;
-    text-align: center;
-    color: #ffffff;
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
-    padding: 10px;
-    transition: 0.2s;
-    box-shadow: 0px 0px 3px #F1F1F1;
-}
-
-.play-btn:hover {
-    background-color: #80808027;
-    box-shadow: 0 0 15px #F1F1F1;
-    letter-spacing: 2px;
-    transition: 0.2s;
-    cursor: pointer;
-}
-
-
-.play-btn:hover::before {
-    opacity: 1;
+    border: none;
+    border-radius: 10px;
+    background: none;
+    color: var(--color);
+    font-size: 2rem;
+    font-weight: bolder;
+    padding: 0 1.5rem;
+    pointer-events: none;
 }
 
 .instance-select {
     display: flex;
     align-items: center;
     position: absolute;
-    left: 260px;
-    top: -5px;
-    height: 31px;
-    width: 21px;
-    margin: 0;
-    border-style: solid;
-    border-width: 1px;
-    border-color: #fff;
-    color: #ffffff;
-    background-color: #80808027;
-    background: url('../../images/default/person.png');
-    background-position: center;
-    background-size: 38px;
-    background-repeat: no-repeat;
-    padding: 10px 14px;
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
-    font: normal normal bold 20px/25px Trebuchet MS;
-    transition: 0.2s;
-    box-shadow: 0px 0px 3px #F1F1F1;
-}
-
-.instance-select:hover {
-    background-color: #80808027;
-    box-shadow: 0 0 15px #F1F1F1;
-    letter-spacing: 2px;
-    transition: 0.2s;
+    right: -3;
+    top: -2;
+    color: var(--element-color);
+    font-size: 1rem;
+    height: calc(100% - 1px);
+    border: solid 3px var(--element-color);
+    text-align: center;
+    border-radius: 15px;
+    padding: 0 0.5rem;
     cursor: pointer;
 }
 
@@ -389,80 +293,33 @@
 }
 
 .info-starting-game {
-    position: absolute;
-    height: 30px;
     display: none;
-    left: 40%;
-    top: 640px;
-    justify-content: center;
-    align-items: center;
-    
-}
-
-.info-starting-game-text {
-    position: absolute;
-    width: 250px;
-    height: 51px;
-    left: -500px;
-    border-radius: 0px;
-    border: currentColor;
     text-align: center;
-    font: normal normal bold 20px/25px Poppins;
-    color: #ffffffe7;
-    margin: 15px 0;
 }
- .progress-bar {
-    position: absolute;
-    top: 170.13%;
-    background-color: transparent;
-    height: 8px;
-    left: -500px;
-    width: 225px;
 
+.progress-bar {
+    appearance: none;
+    height: 10px;
+    margin: 0.5rem 0;
 }
 
 .progress-bar::-webkit-progress-bar {
-    background-color: #797979;
-    border-radius: 5px;
+    background-color: var(--background);
+    border: solid 1px var(--element-color);
+    border-radius: 10px;
 }
 
 .progress-bar::-webkit-progress-value {
-    background-color: #fffefe;
-    border-radius: 5px;
+    background-color: var(--element-color);
+    border-radius: 10px;
 }
 
 .settings-btn {
-    position: relative;
-    left: -630px;
-    top: -5px;
-    height: 31px;
-    width: 21px;
-    margin: 0;
-    border-style: solid;
-    border-width: 1px;
-    border-color: #fff;
-    color: #ffffff;
-    background-color: #80808027;
-    background: url('../../images/default/settins.png');
-    background-position: center;
-    background-size: 42px 42px;
-    background-repeat: no-repeat;
-    padding: 10px 15px;
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
-    font: normal normal bold 20px/25px Trebuchet MS;
-    transition: 0.2s;
-    box-shadow: 0px 0px 3px #F1F1F1;
-}
-
-.settings-btn:hover {
-    background-color: #80808027;
-    box-shadow: 0 0 15px #F1F1F1;
-    letter-spacing: 2px;
-    transition: 0.2s;
-    cursor: pointer;
+    width: 3rem;
+    height: 3rem;
+    font-size: 3rem;
+    color: var(--element-color);
+    margin: 0 1.5rem;
 }
 
 .instance-popup {
@@ -479,30 +336,10 @@
 }
 
 .instances-tab {
-    position: absolute;
-    left: 33%;
+    position: relative;
     background: var(--background);
     border-radius: 10px;
     padding: 1rem 3rem;
-    border: currentColor;
-    transition: 0.2s;
-    color: #F1F1F1;
-    background-color: #414141;
-    border-radius: 6px 6px 6px 6px;
-    border: 2px solid #80808027;
-    transition: 400ms;
-    animation: fadeInUp 0.5s ease-in-out forwards; 
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px); 
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0); 
-    }
 }
 
 .close-popup {
@@ -530,132 +367,12 @@
     margin: 0.5rem 0;
     font-size: 1.5rem;
     cursor: pointer;
-    border-radius: 10px;
-    padding: 1rem 3rem;
-    border: currentColor;
-    transition: 0.2s;
-    color: #F1F1F1;
-    background-color: #80808027;
-    border-radius: 6px 6px 6px 6px;
-    border: 2px solid #fff;
-    transition: 400ms;
 }
 
 .instance-elements:hover {
     background: var(--element-color);
-    background-color: #000000;
-    box-shadow: 0 0 10px #F1F1F1;
-    transition: 700ms;
-    height: -0.5px;
 }
 
 .active-instance {
-    background-color: #000000;
+    background: var(--element-color);
 }
-
-.background-video {
-    width: 100vw;
-    height: 100vh;
-    object-fit: cover;
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    z-index: -1;
-  }
-
-  .background-video video {
-    width: 100vw;
-    height: 100vh;
-    object-fit: cover;
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    z-index: -1;
-  }
-
-  .content {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    margin: 0 auto;
-  }
-  .content video {
-    width: 100%;
-    display: block;
-  }
-  .content:before {
-    content: '';
-    position: absolute;
-    background: rgba(0, 0, 0, 0.5);
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.5) 100%), no-repeat center center scroll;
-  }
-  #mute {
-    cursor:pointer;
-    padding: 10px 20px;
-    background:#000;
-    color: #fff;
-    border-radius: 4px;
-    display: inline-block;
-  }
-
-
-.background-video {
-    width: 100vw;
-    height: 100vh;
-    object-fit: cover;
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    z-index: -1;
-  }
-
-  .background-video video {
-    width: 100vw;
-    height: 100vh;
-    object-fit: cover;
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    z-index: -1;
-  }
-
-  .content {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    margin: 0 auto;
-  }
-  .content video {
-    width: 100%;
-    display: block;
-  }
-  .content:before {
-    content: '';
-    position: absolute;
-    background: rgba(0, 0, 0, 0.5);
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.5) 100%), no-repeat center center scroll;
-  }
-  #mute {
-    cursor:pointer;
-    padding: 10px 20px;
-    background:#000;
-    color: #fff;
-    border-radius: 4px;
-    display: inline-block;
-  }

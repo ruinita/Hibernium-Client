@@ -1,7 +1,7 @@
 {
     "name": "hibernium-client",
     "preductname": "Hibernium Client",
-    "version": "1.5.0",
+    "version": "1.5.1",
     "description": "Cliente de minecraft echo por ruinita",
     "main": "src/app.js",
     "author": {
