@@ -1,8 +1,8 @@
 {
-    "name": "hibernium-client",
-    "preductname": "Hibernium Client",
-    "version": "1.5.1",
-    "description": "Cliente de minecraft echo por ruinita",
+    "name": "hibernium-launcher",
+    "preductname": "Hibernium Launcher",
+    "version": "1.5.5",
+    "description": "by: ruinita y ayudita de itzrauh",
     "main": "src/app.js",
     "author": {
         "name": "ruinita",
@@ -40,6 +40,6 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/ruinita/Hibernium-Client.git"
+        "url": "git+https://github.com/ruinita/Hibernium-Launcher.git"
     }
 }
