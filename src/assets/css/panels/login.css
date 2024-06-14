@@ -30,7 +30,7 @@
 .connect,
 .cancel {
     background: var(--element-color);
-    color: #fff;
+    color: #adadaf8f;
     border: none;
     border-radius: 30px;
     padding: 0.5rem 2rem;
@@ -45,7 +45,7 @@
 .connect:hover,
 .cancel:hover {
     background: #434346; 
-    color: #fff;
+    color: #adadaf8f;
     box-shadow: 0 0 40px rgba(66, 66, 66, 0.7);
 }
 

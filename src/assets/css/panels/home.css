@@ -16,7 +16,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #0508a75e;
+    background: black;
     width: 12rem;
     height: 3rem;
     color: var(--color);
@@ -126,7 +126,7 @@
     padding: 0.5rem 2rem;
     border-radius: 1rem;
     text-align: center;
-    background: #201f29;
+    background: #5f5e69;
     color: var(--color);
     transition: background-color 0.3s, color 0.3s;
 }
@@ -221,7 +221,7 @@
 }
 
 .social-block:hover {
-    background: #0508a78f;
+    background: #adadaf8f;
     transition: 0.2s;
     cursor: pointer;
     backdrop-filter: blur(8px);
@@ -308,7 +308,7 @@
     top: -9px;
     left: -5px;
     border-color: #000000;
-    background-color: #0508a75e;
+    background-color: #adadaf8f;
     font: normal normal bold 20px/25px Trebuchet MS;
     text-align: center;
     color: #ffffff;
@@ -318,13 +318,13 @@
     border-bottom-left-radius: 20px;
     padding: 10px;
     transition: 0.2s;
-    box-shadow: 0px 0px 3px #0508a78f;
+    box-shadow: 0px 0px 3px #adadaf8f;
     backdrop-filter: blur(8px);
 }
 
 .play-btn:hover {
     color: #fff;
-    background: #0508a78f;
+    background: #adadaf8f;
     letter-spacing: 2px;
     transition: 0.2s;
     cursor: pointer;
@@ -345,7 +345,7 @@
     border-color: #000000;
     color: transparent;
     background-image: url(../../images/instancia.png);
-    background-color: #0508a75e;
+    background-color: #adadaf8f;
     background-position: center;
     background-size: 20px 20px;
     background-repeat: no-repeat;
@@ -355,14 +355,14 @@
     border-radius: 10px;
     font: normal normal bold 20px/25px Trebuchet MS;
     transition: 0.2s;
-    box-shadow: 0px 0px 3px #0508a78f;
+    box-shadow: 0px 0px 3px #5f5e69;
     backdrop-filter: blur(8px);
 }
 
 .instance-select:hover {
     cursor: pointer;
     transition: 0.2s;
-    background-color: #0508a78f;
+    background-color: #5f5e69;
     backdrop-filter: blur(8px);
 }
 
@@ -408,7 +408,7 @@
     border-style: solid;
     border-width: 1px;
     border-color: #000000;
-    background-color: #0508a75e;
+    background-color: #adadaf8f;
     width: 50px;
     height: 50px;
     margin-bottom: 1rem;
@@ -421,7 +421,7 @@
 }
 
 .settings-btn:hover {
-    background: #0508a78f;
+    background: #adadaf8f;
     transition: 0.2s;
     backdrop-filter: blur(8px);
     cursor: pointer;
@@ -512,14 +512,14 @@
 
 .instance-elements:hover {
     background: var(--element-color);
-    color: #fff;
+    color: #a5a1a1;
     transform: translateY(-3px);
-    box-shadow: 0 0 30px 40px #0508a78f; 
+    box-shadow: 0 0 30px 40px #adadaf8f; 
 }
 
 
 .active-instance {
-    background-color: #0508a75e;
+    background-color: #adadaf8f;
     border-width: 1px;
     border-color: #ffffff;
 }
