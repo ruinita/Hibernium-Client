@@ -1,7 +1,7 @@
 {
     "name": "hibernium-launcher",
     "preductname": "Hibernium Launcher",
-    "version": "2.0.0",
+    "version": "2.0.1",
     "description": "by: ruinita",
     "main": "src/app.js",
     "author": {
